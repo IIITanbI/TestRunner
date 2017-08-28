@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartAction>Project</StartAction>
+    <StartProgram>C:\Users\1\Downloads\vstest-master\src\vstest.console\bin\Debug\net451\win7-x64\vstest.console.exe</StartProgram>
+    <StartArguments>"D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll" /TestAdapterPath:"D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug"</StartArguments>
+  </PropertyGroup>
+</Project>

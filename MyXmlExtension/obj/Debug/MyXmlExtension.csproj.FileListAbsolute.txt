@@ -1,0 +1,12 @@
+D:\Office\MyXmlExtension\MyXmlExtension\bin\Debug\MyXmlExtension.dll
+D:\Office\MyXmlExtension\MyXmlExtension\bin\Debug\MyXmlExtension.pdb
+D:\Office\MyXmlExtension\MyXmlExtension\bin\Debug\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
+D:\Office\MyXmlExtension\MyXmlExtension\bin\Debug\msdia110TypeLib.dll
+D:\Office\MyXmlExtension\MyXmlExtension\obj\Debug\MyXmlExtension.csprojResolveAssemblyReference.cache
+D:\Office\MyXmlExtension\MyXmlExtension\obj\Debug\MyXmlExtension.dll
+D:\Office\MyXmlExtension\MyXmlExtension\obj\Debug\MyXmlExtension.pdb
+D:\Visual Studio 2015\Projects\BrowserTestAdapter\MyXmlExtension\bin\Debug\MyXmlExtension.dll
+D:\Visual Studio 2015\Projects\BrowserTestAdapter\MyXmlExtension\bin\Debug\MyXmlExtension.pdb
+D:\Visual Studio 2015\Projects\BrowserTestAdapter\MyXmlExtension\obj\Debug\MyXmlExtension.csprojResolveAssemblyReference.cache
+D:\Visual Studio 2015\Projects\BrowserTestAdapter\MyXmlExtension\obj\Debug\MyXmlExtension.dll
+D:\Visual Studio 2015\Projects\BrowserTestAdapter\MyXmlExtension\obj\Debug\MyXmlExtension.pdb

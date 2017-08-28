@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="9a9ffe52-44c9-4f15-8a2c-beff48ccba36" name="1@DESKTOP-J92RQ9N 2017-08-27 16:17:13" runUser="DESKTOP-J92RQ9N\1" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2017-08-27T16:17:13.5945502+03:00" queuing="2017-08-27T16:17:13.5945502+03:00" start="2017-08-27T16:17:12.9269772+03:00" finish="2017-08-27T16:17:13.6683700+03:00" />
+  <TestSettings name="default" id="788b9f35-a010-4128-8580-72c12ba258fa">
+    <Execution>
+      <TestTypeSpecific />
+    </Execution>
+    <Deployment runDeploymentRoot="1_DESKTOP-J92RQ9N 2017-08-27 16_17_13" />
+    <Properties />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="779a8245-9897-4f29-b52d-dbc1920dc350" testId="5ef15c87-4b14-a412-2c48-8404588ea361" testName="Test3" computerName="DESKTOP-J92RQ9N" duration="00:00:00.0240035" startTime="2017-08-27T16:17:13.4718536+03:00" endTime="2017-08-27T16:17:13.5387273+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="779a8245-9897-4f29-b52d-dbc1920dc350">
+      <Output>
+        <StdOut>123 TEst</StdOut>
+        <ErrorInfo>
+          <Message>Test method Tests.Class1.Test3 threw exception: 
+System.NotFiniteNumberException: Number encountered was not a finite quantity.</Message>
+          <StackTrace>    at Tests.Class1.Test3() in D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\Class1.cs:line 17
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="55e3d69c-22e2-44ab-bcd6-4b42edc1249c" testId="184ca70e-9999-8101-3c62-31c69e4746f0" testName="Test1" computerName="DESKTOP-J92RQ9N" duration="00:00:00.0008224" startTime="2017-08-27T16:17:13.5482473+03:00" endTime="2017-08-27T16:17:13.5492480+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="55e3d69c-22e2-44ab-bcd6-4b42edc1249c">
+      <Output>
+        <StdOut>123 TEst</StdOut>
+        <ErrorInfo>
+          <Message>Test method Tests.Class1.Test1 threw exception: 
+System.NotFiniteNumberException: Number encountered was not a finite quantity.</Message>
+          <StackTrace>    at Tests.Class1.Test1() in D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\Class1.cs:line 25
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="1b9b9e2e-771a-4666-968a-292f42c26ce8" testId="337c05a5-2dab-5a95-795b-e823d7a9a7bb" testName="Test2" computerName="DESKTOP-J92RQ9N" duration="00:00:00.0000685" startTime="2017-08-27T16:17:13.5492480+03:00" endTime="2017-08-27T16:17:13.5497486+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1b9b9e2e-771a-4666-968a-292f42c26ce8" />
+    <UnitTestResult executionId="bb40e608-b049-4a47-8af3-52d043333847" testId="0ebf0822-2f6f-4054-86c9-3e99e70e18a9" testName="Test4 (1)" computerName="DESKTOP-J92RQ9N" duration="00:00:00.0000802" startTime="2017-08-27T16:17:13.5497486+03:00" endTime="2017-08-27T16:17:13.5527512+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bb40e608-b049-4a47-8af3-52d043333847">
+      <Output>
+        <StdOut>123 TEst</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d18f1790-17a6-4daf-b7d4-6498340a8b2b" testId="a3340d7c-c612-4e65-98ee-88730c022e34" testName="Test4 (2)" computerName="DESKTOP-J92RQ9N" duration="00:00:00.0000051" startTime="2017-08-27T16:17:13.5497486+03:00" endTime="2017-08-27T16:17:13.5527512+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d18f1790-17a6-4daf-b7d4-6498340a8b2b">
+      <Output>
+        <StdOut>123 TEst</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d1c4c36b-dd66-4216-b42f-c3fe0948a649" testId="5488ef8e-a98f-49cb-99c1-8bceffb846a9" testName="Test4 (1)" computerName="DESKTOP-J92RQ9N" duration="00:00:00.0000046" startTime="2017-08-27T16:17:13.5527512+03:00" endTime="2017-08-27T16:17:13.5532518+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d1c4c36b-dd66-4216-b42f-c3fe0948a649">
+      <Output>
+        <StdOut>123 TEst</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2c9f15c5-0d13-41ed-ad05-b3b70a84a600" testId="1be5563c-032f-4ef2-96a6-de458a580158" testName="Test4 (2)" computerName="DESKTOP-J92RQ9N" duration="00:00:00.0000013" startTime="2017-08-27T16:17:13.5527512+03:00" endTime="2017-08-27T16:17:13.5532518+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2c9f15c5-0d13-41ed-ad05-b3b70a84a600">
+      <Output>
+        <StdOut>123 TEst</StdOut>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Test3" storage="d:\visual studio 2015\projects\browsertestadapter\tests\bin\debug\tests.dll" id="5ef15c87-4b14-a412-2c48-8404588ea361">
+      <Execution id="779a8245-9897-4f29-b52d-dbc1920dc350" />
+      <TestMethod codeBase="D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Tests.Class1" name="Test3" />
+    </UnitTest>
+    <UnitTest name="Test1" storage="d:\visual studio 2015\projects\browsertestadapter\tests\bin\debug\tests.dll" id="184ca70e-9999-8101-3c62-31c69e4746f0">
+      <Execution id="55e3d69c-22e2-44ab-bcd6-4b42edc1249c" />
+      <TestMethod codeBase="D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Tests.Class1" name="Test1" />
+    </UnitTest>
+    <UnitTest name="Test2" storage="d:\visual studio 2015\projects\browsertestadapter\tests\bin\debug\tests.dll" id="337c05a5-2dab-5a95-795b-e823d7a9a7bb">
+      <Execution id="1b9b9e2e-771a-4666-968a-292f42c26ce8" />
+      <TestMethod codeBase="D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Tests.Class1" name="Test2" />
+    </UnitTest>
+    <UnitTest name="Test4 (1)" storage="d:\visual studio 2015\projects\browsertestadapter\tests\bin\debug\tests.dll" id="0ebf0822-2f6f-4054-86c9-3e99e70e18a9">
+      <Execution id="bb40e608-b049-4a47-8af3-52d043333847" />
+      <TestMethod codeBase="D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Tests.Class1" name="Test4 (1)" />
+    </UnitTest>
+    <UnitTest name="Test4 (2)" storage="d:\visual studio 2015\projects\browsertestadapter\tests\bin\debug\tests.dll" id="a3340d7c-c612-4e65-98ee-88730c022e34">
+      <Execution id="d18f1790-17a6-4daf-b7d4-6498340a8b2b" />
+      <TestMethod codeBase="D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Tests.Class1" name="Test4 (2)" />
+    </UnitTest>
+    <UnitTest name="Test4 (1)" storage="d:\visual studio 2015\projects\browsertestadapter\tests\bin\debug\tests.dll" id="5488ef8e-a98f-49cb-99c1-8bceffb846a9">
+      <Execution id="d1c4c36b-dd66-4216-b42f-c3fe0948a649" />
+      <TestMethod codeBase="D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Tests.Class1" name="Test4 (1)" />
+    </UnitTest>
+    <UnitTest name="Test4 (2)" storage="d:\visual studio 2015\projects\browsertestadapter\tests\bin\debug\tests.dll" id="1be5563c-032f-4ef2-96a6-de458a580158">
+      <Execution id="2c9f15c5-0d13-41ed-ad05-b3b70a84a600" />
+      <TestMethod codeBase="D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Tests.Class1" name="Test4 (2)" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="5ef15c87-4b14-a412-2c48-8404588ea361" executionId="779a8245-9897-4f29-b52d-dbc1920dc350" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="184ca70e-9999-8101-3c62-31c69e4746f0" executionId="55e3d69c-22e2-44ab-bcd6-4b42edc1249c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="337c05a5-2dab-5a95-795b-e823d7a9a7bb" executionId="1b9b9e2e-771a-4666-968a-292f42c26ce8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0ebf0822-2f6f-4054-86c9-3e99e70e18a9" executionId="bb40e608-b049-4a47-8af3-52d043333847" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a3340d7c-c612-4e65-98ee-88730c022e34" executionId="d18f1790-17a6-4daf-b7d4-6498340a8b2b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5488ef8e-a98f-49cb-99c1-8bceffb846a9" executionId="d1c4c36b-dd66-4216-b42f-c3fe0948a649" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1be5563c-032f-4ef2-96a6-de458a580158" executionId="2c9f15c5-0d13-41ed-ad05-b3b70a84a600" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="7" executed="7" passed="5" failed="2" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+</TestRun>
