@@ -1,40 +1,31 @@
-﻿using Microsoft.VisualStudio.TestPlatform.Extensions.VSTestIntegration;
+﻿using Microsoft.VisualStudio.TestPlatform.Common;
+using Microsoft.VisualStudio.TestPlatform.Common.Utilities;
+using Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel.Adapter;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel.Client;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel.Logging;
+using Microsoft.VisualStudio.TestPlatform.ObjectModel.Utilities;
+using Microsoft.VisualStudio.TestPlatform.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Xml;
+using System.Xml.Linq;
+using System.Xml.XPath;
 
 namespace ConsoleApp1
 {
-    class FakeSettingsProvider : ISettingsProvider
-    {
-        public void Load(XmlReader reader)
-        {
-            throw new NotImplementedException();
-        }
-    }
-    class FakeRunSettings : IRunSettings
-    {
-        public ISettingsProvider GetSettings(string settingsName)
-        {
-            return new FakeSettingsProvider();
-        }
-        public string SettingsXml => throw new NotImplementedException();
-    }
     class FakeContext : IDiscoveryContext
     {
         public IRunSettings RunSettings => null;
     }
     class FakeLogger : IMessageLogger
     {
-
         public void SendMessage(TestMessageLevel testMessageLevel, string message)
         {
             Console.WriteLine(message);
@@ -53,6 +44,7 @@ namespace ConsoleApp1
 
     class FakeRunContext : IRunContext
     {
+
         public bool KeepAlive => true;
 
         public bool InIsolation => true;
@@ -65,7 +57,39 @@ namespace ConsoleApp1
 
         public string SolutionDirectory => null;
 
-        public IRunSettings RunSettings => null;
+        IRunSettings run = null;
+
+        public FakeRunContext()
+        {
+            string path = @"D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\settings.testsettings";
+
+            if (!MSTestSettingsUtilities.IsLegacyTestSettingsFile(path))
+                throw new Exception("erer");
+
+            var runSettingsDocument = XmlRunSettingsUtilities.CreateDefaultRunSettings();
+            runSettingsDocument = MSTestSettingsUtilities.Import(path, runSettingsDocument, Architecture.X86, FrameworkVersion.Framework45);
+            var settingsXml = runSettingsDocument.CreateNavigator().OuterXml;
+            //settingsXml = settingsXml.Replace("<ForcedLegacyMode>true</ForcedLegacyMode>", "<ForcedLegacyMode>false</ForcedLegacyMode>");
+            //settingsXml = settingsXml.Replace("MSTest", "MSTestV2");
+
+            var res = RunSettingsUtilities.CreateRunSettings(settingsXml, true);
+            this.run = res;
+        }
+
+        public bool isOk = false;
+        public IRunSettings RunSettings
+        {
+            get
+            {
+                if (!isOk)
+                {
+                    isOk = true;
+                    return run;
+                }
+                return run;
+            }
+        }
+
 
         public ITestCaseFilterExpression GetTestCaseFilter(IEnumerable<string> supportedProperties, Func<string, TestProperty> propertyProvider)
         {
@@ -117,6 +141,7 @@ namespace ConsoleApp1
         public override event EventHandler<TestResultEventArgs> TestResult;
         public override event EventHandler<TestRunCompleteEventArgs> TestRunComplete;
 
+        public bool IsCompleted { get; private set; } = false;
         public void SendTestRunMessage(TestMessageLevel testMessageLevel, string message)
         {
             this.TestRunMessage.Invoke(this, new TestRunMessageEventArgs(testMessageLevel, message));
@@ -127,6 +152,9 @@ namespace ConsoleApp1
         }
         public void SendTestRunComplete(IList<AttachmentSet> attachmentSets)
         {
+            if (this.IsCompleted) return;
+
+            this.IsCompleted = true;
             var ats = new Collection<AttachmentSet>(attachmentSets);
             this.TestRunComplete.Invoke(this, new TestRunCompleteEventArgs(null, false, false, null, ats, TimeSpan.FromMinutes(10)));
         }
@@ -135,16 +163,18 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var ass = Assembly.LoadFrom(@"D:\Visual Studio 2015\Projects\BrowserTestAdapter\ConsoleApp1\bin\Debug\Microsoft.VisualStudio.TestPlatform.Extensions.TrxLogger.dll");
+            string folder = @"D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug";
+
+            var ass = Assembly.LoadFrom("Microsoft.VisualStudio.TestPlatform.Extensions.TrxLogger.dll");
             var type = ass.GetType("Microsoft.VisualStudio.TestPlatform.Extensions.TrxLogger");
             var instance = Activator.CreateInstance(type);
             var m = type.GetMethod("Initialize");
 
             var ev = new MyEvents();
-            m.Invoke(instance, new object[] { ev, @"D:\Visual Studio 2015\Projects\BrowserTestAdapter\ConsoleApp1\bin\Debug\Results" });
+            m.Invoke(instance, new object[] { ev, folder + @"\Results1" });
 
             ITestDiscoverer discoverer = new MSTestDiscoverer();
-            string folder = @"D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug";
+
             var sources = Directory.EnumerateFiles(folder).Where(file => Path.GetExtension(file) == ".dll").ToList();
 
             var fakeSink = new FakeTestCaseDiscoverySink();
@@ -153,7 +183,8 @@ namespace ConsoleApp1
             var tc = fakeSink.testCases[0];
 
             ITestExecutor executor = new MSTestExecutor();
-            executor.RunTests(fakeSink.testCases, new FakeRunContext(), new FakeFrameworkHandle(ev));
+            var fake = new FakeRunContext();
+            executor.RunTests(fakeSink.testCases, fake, new FakeFrameworkHandle(ev));
 
             ev.SendTestRunComplete(new List<AttachmentSet>());
         }
