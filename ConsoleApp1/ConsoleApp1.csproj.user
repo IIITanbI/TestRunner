@@ -2,7 +2,9 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Project</StartAction>
-    <StartProgram>C:\Users\1\Downloads\vstest-master\src\vstest.console\bin\Debug\net451\win7-x64\vstest.console.exe</StartProgram>
+    <StartProgram>C:\Program Files %28x86%29\Microsoft Visual Studio\2017\Professional\Common7\IDE\CommonExtensions\Microsoft\TestWindow\ConsoleApp1.exe</StartProgram>
     <StartArguments>"D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll" /TestAdapterPath:"D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug"</StartArguments>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <EnableSQLServerDebugging>false</EnableSQLServerDebugging>
   </PropertyGroup>
 </Project>

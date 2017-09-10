@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestPlatform.Extensions.VSTestIntegration;
+﻿using Microsoft.VisualStudio.TestPlatform.Common.Utilities;
+using Microsoft.VisualStudio.TestPlatform.Extensions.VSTestIntegration;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel.Adapter;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel.Client;
@@ -8,8 +9,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace ConsoleApp1
 {
@@ -26,11 +29,30 @@ namespace ConsoleApp1
         {
             return new FakeSettingsProvider();
         }
-        public string SettingsXml => throw new NotImplementedException();
+        public string SettingsXml
+        {
+            get
+            {
+                return null;
+                var e = XElement.Load(@"D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\runsettings.runsettings");
+                var str = e.ToString();
+                return str;
+            }
+        }
     }
     class FakeContext : IDiscoveryContext
     {
-        public IRunSettings RunSettings => null;
+        public IRunSettings RunSettings
+        {
+            get
+            {
+                var e = XElement.Load(@"D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\runsettings.runsettings");
+                //var e = XElement.Load(@"D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\settings.testsettings");
+                var str = e.ToString();
+                var run = RunSettingsUtilities.CreateRunSettings(str, false);
+                return run;
+            }
+        }
     }
     class FakeLogger : IMessageLogger
     {
@@ -65,7 +87,18 @@ namespace ConsoleApp1
 
         public string SolutionDirectory => null;
 
-        public IRunSettings RunSettings => null;
+        public IRunSettings RunSettings
+        {
+            get
+            {
+                // return new FakeRunSettings();
+                var e = XElement.Load(@"D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\runsettings.runsettings");
+                //var e = XElement.Load(@"D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\settings.testsettings");
+                var str = e.ToString();
+                var run = RunSettingsUtilities.CreateRunSettings(str, false);
+                return run;
+            }
+        }
 
         public ITestCaseFilterExpression GetTestCaseFilter(IEnumerable<string> supportedProperties, Func<string, TestProperty> propertyProvider)
         {
@@ -131,10 +164,57 @@ namespace ConsoleApp1
             this.TestRunComplete.Invoke(this, new TestRunCompleteEventArgs(null, false, false, null, ats, TimeSpan.FromMinutes(10)));
         }
     }
+
     class Program
     {
+        static void test()
+        {
+            var _a = Assembly.LoadFrom(@"Microsoft.VisualStudio.QualityTools.TMI.dll");
+            var type = _a.GetType("Microsoft.VisualStudio.TestTools.TestManagement.Tmi");
+            var handler = _a.GetTypes().FirstOrDefault(t => t.Name == "TmiWarningEventHandler");
+            var instance = Activator.CreateInstance(handler, new object[] { null, null });
+
+            var m = type.GetMethod("GetTestTypeInfosForExtension");
+
+            var res = m.Invoke(null, new object[] { @"D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll" });
+        }
+        private static Assembly ResolveDependentAssembly(object sender, ResolveEventArgs args)
+        {
+            Console.WriteLine(args.Name);
+
+            var requestingAssemblyLocation = args.RequestingAssembly?.Location;
+
+            if (args.Name != null)
+            {
+                var assemblyName = new AssemblyName(args.Name);
+                string targetPath;
+
+                DirectoryInfo dir = new DirectoryInfo(@"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE");
+                var files = dir.GetFiles(assemblyName.Name + ".dll", SearchOption.AllDirectories);
+
+                targetPath = files.First().FullName;
+                //if (requestingAssemblyLocation != null)
+                //    targetPath = Path.Combine(Path.GetDirectoryName(requestingAssemblyLocation), string.Format("{0}.dll", assemblyName.Name));
+                //else
+                //    targetPath = Path.Combine(string.Format("{0}.dll", assemblyName.Name));
+                assemblyName.CodeBase = targetPath; //This alone won't force the assembly to load from here!
+
+                //We have to use LoadFile here, otherwise we won't load a differing
+                //version, regardless of the codebase because only LoadFile
+                //will actually load a *new* assembly if it's at a different path
+                //See: http://msdn.microsoft.com/en-us/library/b61s44e8(v=vs.110).aspx
+                return Assembly.LoadFile(assemblyName.CodeBase);
+            }
+
+            return null;
+        }
+
         static void Main(string[] args)
         {
+          
+            // test();
+            //    AppDomain.CurrentDomain.AssemblyResolve += ResolveDependentAssembly;
+
             var ass = Assembly.LoadFrom(@"D:\Visual Studio 2015\Projects\BrowserTestAdapter\ConsoleApp1\bin\Debug\Microsoft.VisualStudio.TestPlatform.Extensions.TrxLogger.dll");
             var type = ass.GetType("Microsoft.VisualStudio.TestPlatform.Extensions.TrxLogger");
             var instance = Activator.CreateInstance(type);
@@ -145,16 +225,15 @@ namespace ConsoleApp1
 
             ITestDiscoverer discoverer = new MSTestDiscoverer();
             string folder = @"D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug";
+            //Environment.CurrentDirectory = @"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\CommonExtensions\Microsoft\TestWindow";
             var sources = Directory.EnumerateFiles(folder).Where(file => Path.GetExtension(file) == ".dll").ToList();
 
             var fakeSink = new FakeTestCaseDiscoverySink();
             discoverer.DiscoverTests(sources, new FakeContext(), new FakeLogger(), fakeSink);
-
-            var tc = fakeSink.testCases[0];
-
+            Console.WriteLine("TEST CASES = "+ fakeSink.testCases.Count);
             ITestExecutor executor = new MSTestExecutor();
             executor.RunTests(fakeSink.testCases, new FakeRunContext(), new FakeFrameworkHandle(ev));
-
+            //Microsoft.VisualStudio.TestTools.DataSource
             ev.SendTestRunComplete(new List<AttachmentSet>());
         }
     }

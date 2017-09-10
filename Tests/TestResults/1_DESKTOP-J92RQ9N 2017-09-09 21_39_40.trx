@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="36cb5965-1374-4940-8dea-f364935c9aba" name="1@DESKTOP-J92RQ9N 2017-09-09 21:39:40" runUser="DESKTOP-J92RQ9N\1" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2017-09-09T21:39:40.4831103+03:00" queuing="2017-09-09T21:39:40.4831103+03:00" start="2017-09-09T21:39:39.9697780+03:00" finish="2017-09-09T21:39:40.5316441+03:00" />
+  <TestSettings name="default" id="b2998217-accc-478c-835f-e768f5d65f3e">
+    <Execution>
+      <TestTypeSpecific />
+    </Execution>
+    <Deployment runDeploymentRoot="1_DESKTOP-J92RQ9N 2017-09-09 21_39_40" />
+    <Properties />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="1e18aae6-fe81-4b1d-a0f6-949fc5a33c87" testId="23c49f78-233a-423e-5f7a-6cbdf06af238" testName="Test1" computerName="DESKTOP-J92RQ9N" duration="00:00:00.0035918" startTime="2017-09-09T21:39:40.3510663+03:00" endTime="2017-09-09T21:39:40.3845904+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1e18aae6-fe81-4b1d-a0f6-949fc5a33c87">
+      <Output>
+        <StdOut>123 TEst1</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a0380e84-b0fe-44f7-baaa-ff46c0ef1860" testId="77f1ed97-e614-740b-23f7-8e4842b2b465" testName="Test2" computerName="DESKTOP-J92RQ9N" duration="00:00:00.0000699" startTime="2017-09-09T21:39:40.3956029+03:00" endTime="2017-09-09T21:39:40.3956029+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a0380e84-b0fe-44f7-baaa-ff46c0ef1860" />
+    <UnitTestResult executionId="194c1174-0848-43cc-be94-27069ef75a8a" testId="774b93f0-78cc-8d6a-be8e-1d9ecdc074d5" testName="Test3" computerName="DESKTOP-J92RQ9N" duration="00:00:00.0000718" startTime="2017-09-09T21:39:40.3961035+03:00" endTime="2017-09-09T21:39:40.3961035+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="194c1174-0848-43cc-be94-27069ef75a8a">
+      <Output>
+        <StdOut>123 TEst3</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="4698d06a-171b-4238-bd83-7e5eaa33dbee" testId="c91db766-4df9-b250-68c3-f4464fb3e494" testName="Test4" computerName="DESKTOP-J92RQ9N" startTime="2017-09-09T21:39:40.3961035+03:00" endTime="2017-09-09T21:39:40.4456375+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4698d06a-171b-4238-bd83-7e5eaa33dbee">
+      <Output>
+        <ErrorInfo>
+          <Message>The unit test adapter failed to connect to the data source or to read the data. For more information on troubleshooting this error, see "Troubleshooting Data-Driven Unit Tests" (http://go.microsoft.com/fwlink/?LinkId=62412) in the MSDN Library. Error details: Unable to find the requested .Net Framework Data Provider.  It may not be installed.</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Test1" storage="d:\visual studio 2015\projects\browsertestadapter\tests\bin\debug\tests.dll" id="23c49f78-233a-423e-5f7a-6cbdf06af238">
+      <Execution id="1e18aae6-fe81-4b1d-a0f6-949fc5a33c87" />
+      <TestMethod codeBase="D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Tests.Class1" name="Test1" />
+    </UnitTest>
+    <UnitTest name="Test2" storage="d:\visual studio 2015\projects\browsertestadapter\tests\bin\debug\tests.dll" id="77f1ed97-e614-740b-23f7-8e4842b2b465">
+      <Execution id="a0380e84-b0fe-44f7-baaa-ff46c0ef1860" />
+      <TestMethod codeBase="D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Tests.Class1" name="Test2" />
+    </UnitTest>
+    <UnitTest name="Test3" storage="d:\visual studio 2015\projects\browsertestadapter\tests\bin\debug\tests.dll" id="774b93f0-78cc-8d6a-be8e-1d9ecdc074d5">
+      <Execution id="194c1174-0848-43cc-be94-27069ef75a8a" />
+      <TestMethod codeBase="D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Tests.Class1" name="Test3" />
+    </UnitTest>
+    <UnitTest name="Test4" storage="d:\visual studio 2015\projects\browsertestadapter\tests\bin\debug\tests.dll" priority="1" id="c91db766-4df9-b250-68c3-f4464fb3e494">
+      <TestCategory>
+        <TestCategoryItem TestCategory="Khepri" />
+      </TestCategory>
+      <Execution id="4698d06a-171b-4238-bd83-7e5eaa33dbee" />
+      <TestMethod codeBase="D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Tests.Class1" name="Test4" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="23c49f78-233a-423e-5f7a-6cbdf06af238" executionId="1e18aae6-fe81-4b1d-a0f6-949fc5a33c87" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="77f1ed97-e614-740b-23f7-8e4842b2b465" executionId="a0380e84-b0fe-44f7-baaa-ff46c0ef1860" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="774b93f0-78cc-8d6a-be8e-1d9ecdc074d5" executionId="194c1174-0848-43cc-be94-27069ef75a8a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c91db766-4df9-b250-68c3-f4464fb3e494" executionId="4698d06a-171b-4238-bd83-7e5eaa33dbee" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="4" executed="4" passed="3" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+</TestRun>

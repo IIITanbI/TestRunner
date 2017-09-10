@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="9a4524fa-a27c-4f60-9aa5-94ae6f1be528" name="1@DESKTOP-J92RQ9N 2017-09-10 23:58:52" runUser="DESKTOP-J92RQ9N\1" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2017-09-10T23:58:52.1142684+03:00" queuing="2017-09-10T23:58:52.1142684+03:00" start="2017-09-10T23:58:44.1895242+03:00" finish="2017-09-10T23:59:17.6457502+03:00" />
+  <TestSettings name="default" id="ec144381-a478-4d07-b955-048e8907dabd">
+    <Execution>
+      <TestTypeSpecific />
+    </Execution>
+    <Deployment runDeploymentRoot="1_DESKTOP-J92RQ9N 2017-09-10 23_58_52" />
+    <Properties />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="d0dcfbe4-6acf-4961-8c04-5d0626e35567" testId="99f83280-3b41-c07c-9612-c7794a4e95c6" testName="Test1" computerName="DESKTOP-J92RQ9N" duration="00:00:00.0113437" startTime="2017-09-10T23:58:51.7558499+03:00" endTime="2017-09-10T23:58:52.0551909+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d0dcfbe4-6acf-4961-8c04-5d0626e35567">
+      <Output>
+        <StdOut>123 TEst1</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5b65260f-d360-4b6d-a999-0f009dc053a1" testId="727b525c-719e-134c-20b8-7a65f94cd1aa" testName="Test2" computerName="DESKTOP-J92RQ9N" duration="00:00:00.0001012" startTime="2017-09-10T23:58:52.0571821+03:00" endTime="2017-09-10T23:58:52.0591905+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5b65260f-d360-4b6d-a999-0f009dc053a1" />
+    <UnitTestResult executionId="9ef6bfcd-1d20-4639-9b69-e3946245f93f" testId="520802d2-4c77-4cb2-4011-c42772a34e5f" testName="Test3" computerName="DESKTOP-J92RQ9N" duration="00:00:00.0001115" startTime="2017-09-10T23:58:52.0601824+03:00" endTime="2017-09-10T23:58:52.0611933+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9ef6bfcd-1d20-4639-9b69-e3946245f93f">
+      <Output>
+        <StdOut>123 TEst3</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c5030b4b-ad9f-4ccc-b5c8-9399775d1c51" testId="1a642640-744d-451c-98b5-4db8c03c8ea3" testName="Test4 (Data Row 0)" computerName="DESKTOP-J92RQ9N" duration="00:00:00.0003886" startTime="2017-09-10T20:59:17.4412360+03:00" endTime="2017-09-10T20:59:17.4422367+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c5030b4b-ad9f-4ccc-b5c8-9399775d1c51">
+      <Output>
+        <StdOut>/Fields
+123 TEst</StdOut>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Test1" storage="d:\visual studio 2015\projects\browsertestadapter\tests\bin\debug\tests.dll" id="99f83280-3b41-c07c-9612-c7794a4e95c6">
+      <Execution id="d0dcfbe4-6acf-4961-8c04-5d0626e35567" />
+      <TestMethod codeBase="D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Tests.Class1" name="Test1" />
+    </UnitTest>
+    <UnitTest name="Test2" storage="d:\visual studio 2015\projects\browsertestadapter\tests\bin\debug\tests.dll" id="727b525c-719e-134c-20b8-7a65f94cd1aa">
+      <Execution id="5b65260f-d360-4b6d-a999-0f009dc053a1" />
+      <TestMethod codeBase="D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Tests.Class1" name="Test2" />
+    </UnitTest>
+    <UnitTest name="Test3" storage="d:\visual studio 2015\projects\browsertestadapter\tests\bin\debug\tests.dll" id="520802d2-4c77-4cb2-4011-c42772a34e5f">
+      <Execution id="9ef6bfcd-1d20-4639-9b69-e3946245f93f" />
+      <TestMethod codeBase="D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Tests.Class1" name="Test3" />
+    </UnitTest>
+    <UnitTest name="Test4 (Data Row 0)" storage="d:\visual studio 2015\projects\browsertestadapter\tests\bin\debug\tests.dll" priority="1" id="1a642640-744d-451c-98b5-4db8c03c8ea3">
+      <TestCategory>
+        <TestCategoryItem TestCategory="Khepri" />
+      </TestCategory>
+      <Execution id="c5030b4b-ad9f-4ccc-b5c8-9399775d1c51" />
+      <TestMethod codeBase="D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Tests.Class1" name="Test4 (Data Row 0)" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="99f83280-3b41-c07c-9612-c7794a4e95c6" executionId="d0dcfbe4-6acf-4961-8c04-5d0626e35567" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="727b525c-719e-134c-20b8-7a65f94cd1aa" executionId="5b65260f-d360-4b6d-a999-0f009dc053a1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="520802d2-4c77-4cb2-4011-c42772a34e5f" executionId="9ef6bfcd-1d20-4639-9b69-e3946245f93f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1a642640-744d-451c-98b5-4db8c03c8ea3" executionId="c5030b4b-ad9f-4ccc-b5c8-9399775d1c51" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="4" executed="4" passed="4" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+</TestRun>

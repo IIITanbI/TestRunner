@@ -1,7 +1,6 @@
-D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\settings.testsettings
 D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll
 D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.pdb
 D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\obj\Debug\Tests.dll
 D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\obj\Debug\Tests.pdb
-D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
+D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll

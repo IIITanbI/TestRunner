@@ -1,0 +1,76 @@
+I, 12448, 1, 2017/09/10, 21:46:51.964, 45103144796, vstest.console.exe, RunTestsArgumentProcessor:Execute: Test run is starting.
+V, 12448, 1, 2017/09/10, 21:46:51.977, 45103172589, vstest.console.exe, Inferred Multi-Targeting settings:D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll Platform:AnyCPU FrameworkVersion:Framework45
+V, 12448, 1, 2017/09/10, 21:46:51.982, 45103183052, vstest.console.exe, Using effective platform:X86 effective framework:Framework45
+V, 12448, 1, 2017/09/10, 21:46:52.023, 45103272286, vstest.console.exe, TestExtensionResolver:Resolving assembly 'Microsoft.VisualStudio.TestPlatform.Fakes, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+V, 12448, 1, 2017/09/10, 21:46:52.023, 45103272728, vstest.console.exe, TestExtensionResolver: Failed to load the assembly 'Microsoft.VisualStudio.TestPlatform.Fakes, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
+V, 12448, 1, 2017/09/10, 21:46:52.024, 45103272964, vstest.console.exe, TestExtensionResolver:Resolving assembly 'Microsoft.VisualStudio.TestPlatform.Fakes, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+V, 12448, 1, 2017/09/10, 21:46:52.024, 45103273198, vstest.console.exe, TestExtensionResolver: Failed to load the assembly 'Microsoft.VisualStudio.TestPlatform.Fakes, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
+I, 12448, 1, 2017/09/10, 21:46:52.025, 45103276670, vstest.console.exe, Using platformType InProc for inIsolation=False.
+V, 12448, 1, 2017/09/10, 21:46:52.033, 45103293129, vstest.console.exe, TestRunRequest.ExecuteAsync: Creating test run request.
+V, 12448, 1, 2017/09/10, 21:46:52.110, 45103457669, vstest.console.exe, TestRunRequest.ExecuteAsync: Created test run request.
+V, 12448, 1, 2017/09/10, 21:46:52.113, 45103463046, vstest.console.exe, TestRunRequest.ExecuteAsync: Starting.
+I, 12448, 1, 2017/09/10, 21:46:52.114, 45103464868, vstest.console.exe, TestRunRequest.ExecuteAsync: Starting run with settings:TestRunCriteria:
+   KeepAlive=False,FrequencyOfRunStatsChangeEvent=10,RunStatsChangeEventTimeout=00:00:01.5000000,TestCaseFilter=,TestExecutorLauncher=
+   Settingsxml=<RunSettings>
+  <RunConfiguration>
+    <MaxCpuCount>1</MaxCpuCount>
+    <ResultsDirectory>D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\TestResults</ResultsDirectory>
+    <TargetPlatform>X86</TargetPlatform>
+    <TargetFrameworkVersion>Framework45</TargetFrameworkVersion>
+  </RunConfiguration>
+  <MSTest>
+    <ForcedLegacyMode>true</ForcedLegacyMode>
+  </MSTest>
+</RunSettings>
+
+V, 12448, 1, 2017/09/10, 21:46:52.114, 45103464983, vstest.console.exe, TestRunRequest.ExecuteAsync: Wait for the first run request is over.
+I, 12448, 1, 2017/09/10, 21:46:52.118, 45103474257, vstest.console.exe, TestRunRequest.ExecuteAsync: Started.
+V, 12448, 1, 2017/09/10, 21:46:52.118, 45103474365, vstest.console.exe, RunTestsArgumentProcessor:Execute: Test run is queued.
+V, 12448, 1, 2017/09/10, 21:46:52.119, 45103475575, vstest.console.exe, TestRunRequest.WaitForCompletion: Waiting with timeout -1.
+V, 12448, 6, 2017/09/10, 21:46:52.132, 45103503604, vstest.console.exe, TestExtensionResolver:Resolving assembly 'Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed'.
+V, 12448, 6, 2017/09/10, 21:46:52.132, 45103503996, vstest.console.exe, TestExtensionResolver: Failed to load the assembly 'Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed'
+V, 12448, 11, 2017/09/10, 21:46:52.137, 45103514253, vstest.console.exe, TestExtensionResolver:Resolving assembly 'Microsoft.VisualStudio.TestPlatform.Utilities.PhoneAppContainer, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+V, 12448, 11, 2017/09/10, 21:46:52.137, 45103514564, vstest.console.exe, TestExtensionResolver: Failed to load the assembly 'Microsoft.VisualStudio.TestPlatform.Utilities.PhoneAppContainer, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
+V, 12448, 11, 2017/09/10, 21:46:52.137, 45103514712, vstest.console.exe, TestExtensionResolver:Resolving assembly 'Microsoft.VisualStudio.TestPlatform.Utilities.PhoneAppContainer, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+V, 12448, 11, 2017/09/10, 21:46:52.137, 45103515178, vstest.console.exe, TestExtensionResolver: Failed to load the assembly 'Microsoft.VisualStudio.TestPlatform.Utilities.PhoneAppContainer, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
+I, 12448, 11, 2017/09/10, 21:46:52.137, 45103515340, vstest.console.exe, TestDiscoveryManager: Discovering tests from sources D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll
+V, 12448, 11, 2017/09/10, 21:46:52.143, 45103528335, vstest.console.exe, TestExecutionManager.RunTests: Running tests for executor://MSAppContainerTestAdapter/v1
+I, 12448, 11, 2017/09/10, 21:46:52.144, 45103528610, vstest.console.exe, TestPluginManager.CreateTestExtension: Attempting to load test extension: Microsoft.VisualStudio.TestPlatform.Extensions.MSAppContainerAdapter.MSAppContainerTestExecutor
+V, 12448, 11, 2017/09/10, 21:46:52.155, 45103553028, vstest.console.exe, TestExecutionManager.RunTests: Completed running tests for executor://MSAppContainerTestAdapter/v1
+V, 12448, 11, 2017/09/10, 21:46:52.155, 45103553135, vstest.console.exe, TestExecutionManager.RunTests: Running tests for executor://MSTestAdapter/v1
+I, 12448, 11, 2017/09/10, 21:46:52.155, 45103553306, vstest.console.exe, TestPluginManager.CreateTestExtension: Attempting to load test extension: Microsoft.VisualStudio.TestPlatform.Extensions.VSTestIntegration.MSTestExecutor
+I, 12448, 11, 2017/09/10, 21:46:52.215, 45103681396, vstest.console.exe, TmiBridge: Setting an environment variable __UNITTESTEXPLORER_VSINSTALLPATH__ to value C:\Program Files (x86)\Microsoft Visual Studio\2017\TestAgent\Common7\IDE
+I, 12448, 11, 2017/09/10, 21:46:52.239, 45103733027, vstest.console.exe, TmiBridge: Starting to run all tests from sources D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll
+V, 12448, 9, 2017/09/10, 21:46:52.354, 45103978491, vstest.console.exe, TestExtensionResolver:Resolving assembly 'Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed'.
+V, 12448, 9, 2017/09/10, 21:46:52.354, 45103978916, vstest.console.exe, TestExtensionResolver: Failed to load the assembly 'Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed'
+I, 12448, 9, 2017/09/10, 21:46:52.355, 45103980634, vstest.console.exe, AssemblyResolver: Resolving assembly: Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed.
+V, 12448, 9, 2017/09/10, 21:46:52.356, 45103982653, vstest.console.exe, AssemblyResolver: Searching assembly: Newtonsoft.Json in the directory: C:\Program Files (x86)\Microsoft Visual Studio\2017\TestAgent\Common7\IDE\PublicAssemblies
+V, 12448, 9, 2017/09/10, 21:46:52.356, 45103983709, vstest.console.exe, AssemblyResolver: Searching assembly: Newtonsoft.Json in the directory: C:\Program Files (x86)\Microsoft Visual Studio\2017\TestAgent\Common7\IDE\PrivateAssemblies
+I, 12448, 9, 2017/09/10, 21:46:52.361, 45103993399, vstest.console.exe, AssemblyResolver: Resolved assembly: Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed. 
+V, 12448, 11, 2017/09/10, 21:46:52.402, 45104082214, vstest.console.exe, TmiTestRunRequest: Created a test run configuration
+V, 12448, 11, 2017/09/10, 21:46:52.402, 45104083104, vstest.console.exe, TmiTestRunRequest.DisableTestImpactIfRequired: Checking if test impact data collector was enabled via .testsettings
+V, 12448, 11, 2017/09/10, 21:46:52.404, 45104085567, vstest.console.exe, TmiTestRunRequest: Checking if code coverage was enabled via .runsettings
+V, 12448, 11, 2017/09/10, 21:46:52.404, 45104086815, vstest.console.exe, TmiTestRunRequest.DisableCodeCoverageIfRequired: Checking if static code coverage was enabled via .testsettings during debugging session
+E, 12448, 11, 2017/09/10, 21:46:52.413, 45104106401, vstest.console.exe, TmiTestRunRequest.LoadTmiTests: Failed to load the tests from source D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll. Error: Microsoft.VisualStudio.TestTools.TestManagement.InvalidStorageExtensionException: File extension specified '.dll' is not a valid test extension.
+   at Microsoft.VisualStudio.TestTools.TestManagement.Tmi.GetTestTypeInfosForExtension(String ext)
+   at Microsoft.VisualStudio.TestTools.TestManagement.Tmi.GetTestTypesNotManagedInStorage(String storage)
+   at Microsoft.VisualStudio.TestTools.TestManagement.Tmi.LoadTestsFromTipsHelper(IEnumerable`1 locations, ProjectData projectData)
+   at Microsoft.VisualStudio.TestTools.TestManagement.Tmi.LoadTests(IEnumerable`1 locations, ProjectData projectData, TestConflictHandler vetoingHandler)
+   at Microsoft.VisualStudio.TestTools.TestManagement.Tmi.LoadTests(String location, ProjectData projectData, TestConflictHandler vetoingHandler)
+   at Microsoft.VisualStudio.TestPlatform.Extensions.TmiHelper.TmiTestRunRequest.LoadTmiTests()
+I, 12448, 11, 2017/09/10, 21:46:52.414, 45104109059, vstest.console.exe, TmiBridge: Completed run of all tests from sources D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug\Tests.dll
+V, 12448, 11, 2017/09/10, 21:46:52.416, 45104111789, vstest.console.exe, TestExecutionManager.RunTests: Completed running tests for executor://MSTestAdapter/v1
+V, 12448, 11, 2017/09/10, 21:46:52.416, 45104111851, vstest.console.exe, TestExecutionManager.RunTests: Running tests for executor://CppUnitTestExecutor/v1
+I, 12448, 11, 2017/09/10, 21:46:52.416, 45104112042, vstest.console.exe, TestPluginManager.CreateTestExtension: Attempting to load test extension: Microsoft.VisualStudio.TestTools.CppUnitTestFramework.CppUnitTestExtension.TestExecutor
+V, 12448, 11, 2017/09/10, 21:46:52.426, 45104134754, vstest.console.exe, TestExecutionManager.RunTests: Completed running tests for executor://CppUnitTestExecutor/v1
+V, 12448, 11, 2017/09/10, 21:46:52.431, 45104145289, vstest.console.exe, TestRunRequest:SendTestRunMessage: Starting.
+I, 12448, 11, 2017/09/10, 21:46:52.433, 45104148431, vstest.console.exe, TestRunRequest:SendTestRunMessage: Completed.
+V, 12448, 11, 2017/09/10, 21:46:52.436, 45104155438, vstest.console.exe, RocksteadyTestRunEventReceiver:TestRunComplete: No results are available in last chunk.
+V, 12448, 11, 2017/09/10, 21:46:52.437, 45104158344, vstest.console.exe, TestRunRequest:TestRunComplete: Starting. IsAborted:False IsCanceled:False.
+V, 12448, 1, 2017/09/10, 21:46:52.445, 45104175383, vstest.console.exe, TestRunRequest.Dispose: Starting.
+V, 12448, 11, 2017/09/10, 21:46:52.458, 45104202520, vstest.console.exe, TelemetrySession: Sending the telemetry data to the server.
+I, 12448, 11, 2017/09/10, 21:46:52.458, 45104203342, vstest.console.exe, TestRunRequest:TestRunComplete: Completed.
+V, 12448, 11, 2017/09/10, 21:46:52.458, 45104203413, vstest.console.exe, TestExecutionManager.RunTests: Run is complete.
+I, 12448, 1, 2017/09/10, 21:46:52.546, 45104390495, vstest.console.exe, TestRunRequest.Dispose: Completed.
+I, 12448, 1, 2017/09/10, 21:46:52.547, 45104394160, vstest.console.exe, RunTestsArgumentProcessor:Execute: Test run is completed.
+V, 12448, 1, 2017/09/10, 21:46:52.551, 45104402903, vstest.console.exe, Executor.Execute: Exiting with exit code of 0
