@@ -256,7 +256,7 @@ namespace ConsoleApp1
             // LoadFrom(@"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\Extensions\TestPlatform");
             // LoadFrom(@"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\CommonExtensions\Microsoft\TestWindow\Team Explorer");
             // LoadFrom(@"D:\Visual Studio 2015\Projects\BrowserTestAdapter\ConsoleApp1\bin\Debug\ForTest", SearchOption.TopDirectoryOnly);
-            LoadFrom(Environment.CurrentDirectory, SearchOption.AllDirectories);
+            //LoadFrom(Environment.CurrentDirectory, SearchOption.AllDirectories);
             // test();
             //    AppDomain.CurrentDomain.AssemblyResolve += ResolveDependentAssembly;
             var ass = Assembly.LoadFrom(@"D:\Visual Studio 2015\Projects\BrowserTestAdapter\ConsoleApp1\bin\Debug\Microsoft.VisualStudio.TestPlatform.Extensions.TrxLogger.dll");
