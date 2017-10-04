@@ -11,12 +11,13 @@ using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Text;
 using System.Xml;
 using System.Xml.Linq;
 
 namespace ConsoleApp1
 {
-    class FakeSettingsProvider : ISettingsProvider
+    public class FakeSettingsProvider : ISettingsProvider
     {
         public void Load(XmlReader reader)
         {
@@ -49,14 +50,13 @@ namespace ConsoleApp1
                 var e = XElement.Load(@"D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\runsettings.runsettings");
                 //var e = XElement.Load(@"D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\settings.testsettings");
                 var str = e.ToString();
-                var run = RunSettingsUtilities.CreateRunSettings(str, false);
+                var run = RunSettingsUtilities.CreateAndInitializeRunSettings(str);
                 return run;
             }
         }
     }
     class FakeLogger : IMessageLogger
     {
-
         public void SendMessage(TestMessageLevel testMessageLevel, string message)
         {
             Console.WriteLine(message);
@@ -95,7 +95,7 @@ namespace ConsoleApp1
                 var e = XElement.Load(@"D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\runsettings.runsettings");
                 //var e = XElement.Load(@"D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\settings.testsettings");
                 var str = e.ToString();
-                var run = RunSettingsUtilities.CreateRunSettings(str, false);
+                var run = RunSettingsUtilities.CreateAndInitializeRunSettings(str);
                 return run;
             }
         }
@@ -180,7 +180,7 @@ namespace ConsoleApp1
         }
         private static Assembly ResolveDependentAssembly(object sender, ResolveEventArgs args)
         {
-            Console.WriteLine(args.Name);
+            Console.WriteLine(args.Name + "   " + sender.GetType().Name);
 
             var requestingAssemblyLocation = args.RequestingAssembly?.Location;
 
@@ -189,10 +189,12 @@ namespace ConsoleApp1
                 var assemblyName = new AssemblyName(args.Name);
                 string targetPath;
 
-                DirectoryInfo dir = new DirectoryInfo(@"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE");
+                DirectoryInfo dir = new DirectoryInfo(@"D:\Visual Studio 2015\Projects\BrowserTestAdapter\ConsoleApp1\bin\Debug\ForTest");
                 var files = dir.GetFiles(assemblyName.Name + ".dll", SearchOption.AllDirectories);
 
-                targetPath = files.First().FullName;
+                targetPath = files.FirstOrDefault()?.FullName;
+                if (targetPath == null)
+                    return null;
                 //if (requestingAssemblyLocation != null)
                 //    targetPath = Path.Combine(Path.GetDirectoryName(requestingAssemblyLocation), string.Format("{0}.dll", assemblyName.Name));
                 //else
@@ -209,32 +211,73 @@ namespace ConsoleApp1
             return null;
         }
 
+        static List<string> LoadFrom(string folder, SearchOption so = SearchOption.AllDirectories)
+        {
+            var dlls = Directory.GetFiles(folder, "*.dll", so);
+            var notLoaded = new List<string>();
+            foreach (var dll in dlls)
+            {
+                if (dll.Contains("ForTest"))
+                {
+                    //  continue;
+                }
+
+                try
+                {
+                    AssemblyName an = AssemblyName.GetAssemblyName(dll);
+                    Assembly.Load(an);
+                    continue;
+                }
+                catch (FileLoadException fle)
+                {
+                }
+                catch (Exception ex)
+                {
+                }
+
+                try
+                {
+                    Assembly.LoadFrom(dll);
+                    continue;
+                }
+                catch (Exception ex)
+                {
+
+                }
+                notLoaded.Add(dll);
+            }
+
+            return notLoaded;
+        }
         static void Main(string[] args)
         {
-          
+            AppDomain.CurrentDomain.AssemblyResolve += ResolveDependentAssembly;
+
+            // LoadFrom(@"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\Extensions\TestPlatform");
+            // LoadFrom(@"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\CommonExtensions\Microsoft\TestWindow\Team Explorer");
+            // LoadFrom(@"D:\Visual Studio 2015\Projects\BrowserTestAdapter\ConsoleApp1\bin\Debug\ForTest", SearchOption.TopDirectoryOnly);
+            LoadFrom(Environment.CurrentDirectory, SearchOption.AllDirectories);
             // test();
             //    AppDomain.CurrentDomain.AssemblyResolve += ResolveDependentAssembly;
-
             var ass = Assembly.LoadFrom(@"D:\Visual Studio 2015\Projects\BrowserTestAdapter\ConsoleApp1\bin\Debug\Microsoft.VisualStudio.TestPlatform.Extensions.TrxLogger.dll");
-            var type = ass.GetType("Microsoft.VisualStudio.TestPlatform.Extensions.TrxLogger");
+            var type = ass.GetType("Microsoft.VisualStudio.TestPlatform.Extensions.TrxLogger.TrxLogger");
             var instance = Activator.CreateInstance(type);
-            var m = type.GetMethod("Initialize");
+            var method = type.GetMethods().Where(m => m.Name == "Initialize").First();
 
             var ev = new MyEvents();
-            m.Invoke(instance, new object[] { ev, @"D:\Visual Studio 2015\Projects\BrowserTestAdapter\ConsoleApp1\bin\Debug\Results" });
+            method.Invoke(instance, new object[] { ev, @"D:\Visual Studio 2015\Projects\BrowserTestAdapter\ConsoleApp1\bin\Debug\Results" });
 
             ITestDiscoverer discoverer = new MSTestDiscoverer();
             string folder = @"D:\Visual Studio 2015\Projects\BrowserTestAdapter\Tests\bin\Debug";
-            //Environment.CurrentDirectory = @"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\CommonExtensions\Microsoft\TestWindow";
             var sources = Directory.EnumerateFiles(folder).Where(file => Path.GetExtension(file) == ".dll").ToList();
 
+            Environment.CurrentDirectory = @"D:\Visual Studio 2015\Projects\BrowserTestAdapter\ConsoleApp1\bin\Debug\ForTest";
             var fakeSink = new FakeTestCaseDiscoverySink();
             discoverer.DiscoverTests(sources, new FakeContext(), new FakeLogger(), fakeSink);
-            Console.WriteLine("TEST CASES = "+ fakeSink.testCases.Count);
+            Console.WriteLine("TEST CASES = " + fakeSink.testCases.Count);
             ITestExecutor executor = new MSTestExecutor();
             executor.RunTests(fakeSink.testCases, new FakeRunContext(), new FakeFrameworkHandle(ev));
-            //Microsoft.VisualStudio.TestTools.DataSource
-            ev.SendTestRunComplete(new List<AttachmentSet>());
+            // ev.SendTestRunComplete(new List<AttachmentSet>());
         }
     }
 }
